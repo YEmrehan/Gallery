@@ -3,3 +3,4 @@
 *.sql linguist-detectable=true
 *.xml linguist-detectable=true
 *.xml linguist-generated=false
+*.json linguist-detectable=true
