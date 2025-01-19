@@ -4,5 +4,3 @@
 *.xml linguist-detectable=true
 *.xml linguist-generated=false
 *.json linguist-detectable=true
-
-*.sql linguist-language=MySQL
