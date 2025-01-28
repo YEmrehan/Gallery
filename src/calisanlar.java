@@ -231,7 +231,7 @@ public class calisanlar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
         public Connection baglan(){
-        String yol="jdbc:mysql://localhost/galeri";
+        String yol="jdbc:mysql://localhost:3308/gallery";
         String kullanici_adi="root";
         String parola="";
         Connection conn=null;

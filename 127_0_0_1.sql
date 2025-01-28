@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 07 Oca 2025, 13:25:45
+-- Üretim Zamanı: 28 Oca 2025, 13:46:57
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `galeri`
+-- Veritabanı: `gallery`
 --
-CREATE DATABASE IF NOT EXISTS `galeri` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `galeri`;
+CREATE DATABASE IF NOT EXISTS `gallery` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `gallery`;
 
 -- --------------------------------------------------------
 
