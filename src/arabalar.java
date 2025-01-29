@@ -1,80 +1,50 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import java.io.PrintStream;
+import java.nio.charset.Charset;
+
 public class arabalar extends javax.swing.JFrame {
 
     public arabalar() {
+        System.setOut(new PrintStream(System.out, true, Charset.forName("UTF-8")));
+        System.out.println("Türkçe karakterler: ç, ğ, ü, ö, ş, ı");
         initComponents();
-        baglan();
-        tablo();
+        tablo tablo = new tablo();
+        tablo.tablo(jTable1,1);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jSpinner2 = new javax.swing.JSpinner();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jSpinner1 = new javax.swing.JSpinner();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        lbl_id = new javax.swing.JLabel();
+        lbl_sasi_no = new javax.swing.JLabel();
+        lbl_marka = new javax.swing.JLabel();
+        lbl_model = new javax.swing.JLabel();
+        lbl_yil = new javax.swing.JLabel();
+        lbl_km = new javax.swing.JLabel();
+        lbl_yakit = new javax.swing.JLabel();
+        lbl_vites = new javax.swing.JLabel();
+        lbl_hasar = new javax.swing.JLabel();
+        tf_id = new javax.swing.JTextField();
+        tf_sasi_no = new javax.swing.JTextField();
+        tf_marka = new javax.swing.JTextField();
+        tf_model = new javax.swing.JTextField();
+        spn_yil = new javax.swing.JSpinner();
+        spn_km = new javax.swing.JSpinner();
+        cmb_yakit = new javax.swing.JComboBox<>();
+        cmb_vites = new javax.swing.JComboBox<>();
+        tf_hasar = new javax.swing.JTextField();
+        btn_ekle = new javax.swing.JButton();
+        btn_sil = new javax.swing.JButton();
+        btn_duzenle = new javax.swing.JButton();
+        btn_arabalar = new javax.swing.JButton();
+        btn_satislar = new javax.swing.JButton();
+        btn_musteriler = new javax.swing.JButton();
+        btn_calisanlar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arabalar");
         setPreferredSize(new java.awt.Dimension(850, 700));
-
-        jToggleButton1.setText("Arabalar");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        jToggleButton2.setText("Satışlar");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-
-        jToggleButton3.setText("Müşteriler");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-
-        jToggleButton4.setText("Çalışanlar");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,46 +71,74 @@ public class arabalar extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setText("Şasi Numarası");
+        lbl_id.setText("ID");
 
-        jLabel2.setText("Model");
+        lbl_sasi_no.setText("Şasi Numarası");
 
-        jLabel3.setText("Marka");
+        lbl_marka.setText("Marka");
 
-        jLabel4.setText("Yıl");
+        lbl_model.setText("Model");
 
-        jLabel5.setText("Yakıt Tipi");
+        lbl_yil.setText("Yıl");
 
-        jLabel6.setText("Kilometre");
+        lbl_km.setText("Kilometre");
 
-        jLabel7.setText("Vites Tİpi");
+        lbl_yakit.setText("Yakıt Tipi");
 
-        jLabel8.setText("Hasar Kaydı");
+        lbl_vites.setText("Vites Tİpi");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Benzin", "Dizel", "Benzin ve LPG", "Elektrik" }));
+        lbl_hasar.setText("Hasar Kaydı");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manuel", "Otomatik" }));
+        cmb_yakit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Benzin", "Dizel", "Benzin ve LPG", "Elektrik" }));
 
-        jButton1.setText("Ekle");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cmb_vites.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manuel", "Otomatik" }));
+
+        btn_ekle.setText("Ekle");
+        btn_ekle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_ekleActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("ID");
-
-        jButton3.setText("Sil");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_sil.setText("Sil");
+        btn_sil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_silActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Düzenle");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_duzenle.setText("Düzenle");
+        btn_duzenle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_duzenleActionPerformed(evt);
+            }
+        });
+
+        btn_arabalar.setText("Arabalar");
+        btn_arabalar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_arabalarActionPerformed(evt);
+            }
+        });
+
+        btn_satislar.setText("Satışlar");
+        btn_satislar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_satislarActionPerformed(evt);
+            }
+        });
+
+        btn_musteriler.setText("Müşteriler");
+        btn_musteriler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_musterilerActionPerformed(evt);
+            }
+        });
+
+        btn_calisanlar.setText("Çalışanlar");
+        btn_calisanlar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_calisanlarActionPerformed(evt);
             }
         });
 
@@ -156,99 +154,98 @@ public class arabalar extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lbl_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_model, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_km, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_vites, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_hasar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_sasi_no, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_marka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lbl_yakit, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_yil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSpinner2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSpinner1)
-                            .addComponent(jTextField4)
+                            .addComponent(cmb_vites, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmb_yakit, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(spn_km)
+                            .addComponent(tf_model, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf_marka)
+                            .addComponent(tf_sasi_no, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(spn_yil)
+                            .addComponent(tf_hasar)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btn_duzenle, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(18, 18, 18)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(btn_ekle, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btn_sil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jToggleButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jToggleButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_arabalar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_satislar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_musteriler, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                            .addComponent(btn_calisanlar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
+                            .addComponent(lbl_id)
+                            .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_ekle))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3))
+                            .addComponent(lbl_sasi_no)
+                            .addComponent(tf_sasi_no, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_sil))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
+                            .addComponent(lbl_marka)
+                            .addComponent(tf_marka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_duzenle))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_model)
+                            .addComponent(tf_model, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_yil)
+                            .addComponent(spn_yil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_km)
+                            .addComponent(spn_km, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_yakit)
+                            .addComponent(cmb_yakit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbl_vites)
+                            .addComponent(cmb_vites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lbl_hasar)
+                            .addComponent(tf_hasar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jToggleButton1)
+                        .addComponent(btn_arabalar)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleButton2)
+                        .addComponent(btn_satislar)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleButton3)
+                        .addComponent(btn_musteriler)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleButton4)))
-                .addGap(39, 39, 39)
+                        .addComponent(btn_calisanlar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -256,224 +253,46 @@ public class arabalar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public Connection baglan(){
-        String yol="jdbc:mysql://localhost:3308/gallery";
-        String kullanici_adi="root";
-        String parola="";
-        Connection conn=null;
-        try{
-            conn=DriverManager.getConnection(yol,kullanici_adi,parola);
-        }catch(SQLException mySQLException){
-            JOptionPane.showMessageDialog(rootPane, "Veritabanı Bağlantısı Sırasında Bir Hata Oluştu.");
-        }
-        return conn;
-    }
-    
-    public void tablo(){
-        Connection baglanti = baglan();
-        try {
-            Statement sorgu = baglanti.createStatement();
-            ResultSet sonucKumesi = sorgu.executeQuery("SELECT * FROM arabalar");
-            DefaultTableModel varsayilanTablo = (DefaultTableModel) jTable1.getModel();
-            varsayilanTablo.setRowCount(0);
-            while(sonucKumesi.next()){
-                varsayilanTablo.addRow(new String[]{
-                    sonucKumesi.getString("id"),
-                    sonucKumesi.getString("sasi_numarasi"),
-                    sonucKumesi.getString("marka"),
-                    sonucKumesi.getString("model"),
-                    sonucKumesi.getString("yil"),
-                    sonucKumesi.getString("kilometre"),
-                    sonucKumesi.getString("yakit_tipi"),
-                    sonucKumesi.getString("vites_tipi"),
-                    sonucKumesi.getString("hasar_kaydi"),
-                });
-            }
-            jTable1.setModel(varsayilanTablo);
-            sorgu.close();
-            baglanti.close();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(rootPane, "Kayıtlar Listelenemedi.");
-        }
-    }
-    
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-            satislar satislarPage = new satislar();
-            satislarPage.setVisible(true);
-            this.setVisible(false);
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void btn_ekleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ekleActionPerformed
+        ESD ekle = new ESD();
+        ekle.arabaEkle(jTable1, tf_id, tf_sasi_no, tf_marka, tf_model, spn_yil, spn_km, cmb_yakit, cmb_vites, tf_hasar);
+    }//GEN-LAST:event_btn_ekleActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-            arabalar arabalarPage = new arabalar();
-            arabalarPage.setVisible(true);
-            this.setVisible(false);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void btn_silActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_silActionPerformed
+        ESD sil = new ESD();
+        sil.sil(jTable1);
+    }//GEN-LAST:event_btn_silActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-            musteriler musterilerPage = new musteriler();
-            musterilerPage.setVisible(true);
-            this.setVisible(false);
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    private void btn_duzenleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_duzenleActionPerformed
+       ESD duzenle = new ESD();
+       duzenle.arabaDuzenle(jTable1, tf_id, tf_sasi_no, tf_marka, tf_model, spn_yil, spn_km, cmb_yakit, cmb_vites, tf_hasar);
+    }//GEN-LAST:event_btn_duzenleActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-            calisanlar calisanlarPage = new calisanlar();
-            calisanlarPage.setVisible(true);
-            this.setVisible(false);
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    private void btn_arabalarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arabalarActionPerformed
+        arabalar arabalarPage = new arabalar();
+        arabalarPage.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_arabalarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Connection baglanti = baglan();
+    private void btn_satislarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_satislarActionPerformed
+        satislar satislarPage = new satislar();
+        satislarPage.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_satislarActionPerformed
 
-            try {
-                Statement sorgu=baglanti.createStatement();
-                String id = jTextField5.getText();
-                String sasi_numarasi = jTextField1.getText();
-                String marka = jTextField2.getText();
-                String model = jTextField3.getText();
-                String yil = jSpinner1.getValue().toString();
-                String kilometre = jSpinner2.getValue().toString();
-                String yakit_tipi = jComboBox1.getSelectedItem().toString();
-                String vites_tipi = jComboBox2.getSelectedItem().toString();
-                String hasar_kaydi = jTextField4.getText();
-                
-                sorgu.executeUpdate(
-                    "INSERT INTO arabalar(id,sasi_numarasi,marka,model,yil,kilometre,yakit_tipi,vites_tipi,hasar_kaydi)"
-                    +"VALUES('"+id+"','"+sasi_numarasi+"','"+marka+"','"+model+"','"+yil+"','"+kilometre+"','"+yakit_tipi+"','"+vites_tipi+"','"+hasar_kaydi+"')"
-                );
-                sorgu.close();
-                baglanti.close();
-                JOptionPane.showMessageDialog(rootPane, "Kayıt Eklendi.");
-                tablo();
-            } catch (SQLException mySQLException) {
-                JOptionPane.showMessageDialog(rootPane, "Kayıt Eklenemedi.");
-            }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_musterilerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_musterilerActionPerformed
+        musteriler musterilerPage = new musteriler();
+        musterilerPage.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_musterilerActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Connection baglanti=baglan();
-        try{
-            if (jTable1.getSelectedRowCount()>0){
-                if(JOptionPane.showConfirmDialog(rootPane, "Silmek İstiyor musunuz","Silme İşlemi",JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION){
-                    int satirNumarasi=jTable1.getSelectedRow();
-                    System.out.println("Secilen Satir: " + satirNumarasi);
-                    String id=jTable1.getValueAt(satirNumarasi, 0).toString();
-                    System.out.println("id: " + id);
-                    Statement sorgu = baglanti.createStatement();
-                    sorgu.executeUpdate("DELETE FROM arabalar WHERE id='"+id+"'");
-                    sorgu.close();
-                    baglanti.close();
-                    JOptionPane.showMessageDialog(rootPane, "Seçili Kayıt Silindi.");
-                    tablo();
-                }
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Lütfen Silmek İstediğiniz Kaydı Tablodan Seçiniz.");
-            }
-        }catch(SQLException mySQLExp){
-            JOptionPane.showMessageDialog(rootPane, "Kayıt Silinemedi.");
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-           // Bağlantıyı oluştur
-    Connection baglanti = baglan();
-    
-    try {
-        // Eğer tablodan bir satır seçilmişse
-        if (jTable1.getSelectedRowCount() > 0) {
-            // Seçilen satırın indeksini al
-            int satirNumarasi = jTable1.getSelectedRow();
-            
-            // Seçilen satırdaki ID değerini al (ilk kolon)
-            String id = jTable1.getValueAt(satirNumarasi, 0).toString();
-            
-            // Kullanıcının düzenlediği yeni verileri al
-            String sasi_numarasi = jTextField1.getText();
-            String marka = jTextField2.getText();
-            String model = jTextField3.getText();
-            String yil = jSpinner1.getValue().toString();
-            String kilometre = jSpinner2.getValue().toString();
-            String yakit_tipi = jComboBox1.getSelectedItem().toString();
-            String vites_tipi = jComboBox2.getSelectedItem().toString();
-            String hasar_kaydi = jTextField4.getText();
-            
-            // Güncelleme sorgusu için temel SQL
-            StringBuilder sqlUpdate = new StringBuilder("UPDATE arabalar SET ");
-            
-            // Hangi alanların boş olmadığını kontrol et ve sadece o alanları güncelle
-            boolean isFirst = true; // İlk güncellenen alan kontrolü için
-            
-            if (!sasi_numarasi.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("sasi_numarasi='" + sasi_numarasi + "'");
-                isFirst = false;
-            }
-            if (!marka.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("marka='" + marka + "'");
-                isFirst = false;
-            }
-            if (!model.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("model='" + model + "'");
-                isFirst = false;
-            }
-            if (!yil.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("yil='" + yil + "'");
-                isFirst = false;
-            }
-            if (!kilometre.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("kilometre='" + kilometre + "'");
-                isFirst = false;
-            }
-            if (!yakit_tipi.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("yakit_tipi='" + yakit_tipi + "'");
-                isFirst = false;
-            }
-            if (!vites_tipi.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("vites_tipi='" + vites_tipi + "'");
-                isFirst = false;
-            }
-            if (!hasar_kaydi.isEmpty()) {
-                if (!isFirst) sqlUpdate.append(", ");
-                sqlUpdate.append("hasar_kaydi='" + hasar_kaydi + "'");
-                isFirst = false;
-            }
-            
-            // Son olarak WHERE koşulunu ekle
-            sqlUpdate.append(" WHERE id='" + id + "'");
-            
-            // SQL sorgusunu çalıştır
-            Statement sorgu = baglanti.createStatement();
-            sorgu.executeUpdate(sqlUpdate.toString());
-            
-            // Sorguyu kapat
-            sorgu.close();
-            // Bağlantıyı kapat
-            baglanti.close();
-            
-            // Kullanıcıya bilgi ver
-            JOptionPane.showMessageDialog(rootPane, "Kayıt Güncellendi.");
-            // Tabloyu güncelle
-            tablo();
-        } else {
-            // Eğer kullanıcı herhangi bir satır seçmediyse
-            JOptionPane.showMessageDialog(rootPane, "Lütfen Güncellemek İstediğiniz Kaydı Tablodan Seçiniz.");
-        }
-    } catch (SQLException mySQLExp) {
-        // Hata durumunda kullanıcıya bilgi ver
-        JOptionPane.showMessageDialog(rootPane, "Kayıt Güncellenemedi.");
-    }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_calisanlarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calisanlarActionPerformed
+        calisanlar calisanlarPage = new calisanlar();
+        calisanlarPage.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_calisanlarActionPerformed
 
     public static void main(String args[]) {
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -481,51 +300,41 @@ public class arabalar extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(arabalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(arabalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(arabalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(arabalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new arabalar().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new arabalar().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton btn_arabalar;
+    private javax.swing.JButton btn_calisanlar;
+    private javax.swing.JButton btn_duzenle;
+    private javax.swing.JButton btn_ekle;
+    private javax.swing.JButton btn_musteriler;
+    private javax.swing.JButton btn_satislar;
+    private javax.swing.JButton btn_sil;
+    private javax.swing.JComboBox<String> cmb_vites;
+    private javax.swing.JComboBox<String> cmb_yakit;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JLabel lbl_hasar;
+    private javax.swing.JLabel lbl_id;
+    private javax.swing.JLabel lbl_km;
+    private javax.swing.JLabel lbl_marka;
+    private javax.swing.JLabel lbl_model;
+    private javax.swing.JLabel lbl_sasi_no;
+    private javax.swing.JLabel lbl_vites;
+    private javax.swing.JLabel lbl_yakit;
+    private javax.swing.JLabel lbl_yil;
+    private javax.swing.JSpinner spn_km;
+    private javax.swing.JSpinner spn_yil;
+    private javax.swing.JTextField tf_hasar;
+    private javax.swing.JTextField tf_id;
+    private javax.swing.JTextField tf_marka;
+    private javax.swing.JTextField tf_model;
+    private javax.swing.JTextField tf_sasi_no;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,53 +35,51 @@
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel9" max="32767" attributes="0"/>
-                              <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel1" max="32767" attributes="0"/>
-                              <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_id" max="32767" attributes="0"/>
+                              <Component id="lbl_model" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_km" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_vites" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_hasar" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lbl_sasi_no" max="32767" attributes="0"/>
+                              <Component id="lbl_marka" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jLabel5" min="-2" pref="74" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="lbl_yakit" min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="lbl_yil" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jComboBox2" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jSpinner2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField3" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField1" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jSpinner1" max="32767" attributes="0"/>
-                          <Component id="jTextField4" max="32767" attributes="0"/>
+                          <Component id="cmb_vites" alignment="1" max="32767" attributes="0"/>
+                          <Component id="cmb_yakit" alignment="0" max="32767" attributes="0"/>
+                          <Component id="spn_km" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tf_model" alignment="1" max="32767" attributes="0"/>
+                          <Component id="tf_marka" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tf_sasi_no" alignment="1" max="32767" attributes="0"/>
+                          <Component id="spn_yil" max="32767" attributes="0"/>
+                          <Component id="tf_hasar" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextField5" min="-2" pref="184" max="-2" attributes="0"/>
+                              <Component id="tf_id" min="-2" pref="184" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btn_duzenle" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" pref="91" max="-2" attributes="0"/>
+                                  <Component id="btn_ekle" min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jButton3" alignment="1" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="btn_sil" alignment="1" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton1" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="jToggleButton4" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jToggleButton2" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="jToggleButton3" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btn_arabalar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btn_satislar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btn_musteriler" alignment="0" pref="111" max="32767" attributes="0"/>
+                          <Component id="btn_calisanlar" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -92,68 +90,68 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_ekle" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_sasi_no" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_sasi_no" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_sil" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_marka" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_marka" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_duzenle" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_model" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_model" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_yil" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spn_yil" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSpinner2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_km" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spn_km" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_yakit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmb_yakit" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_vites" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmb_vites" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_hasar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_hasar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_arabalar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_satislar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="btn_musteriler" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jToggleButton4" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_calisanlar" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="276" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -161,38 +159,6 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Arabalar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sat&#x131;&#x15f;lar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teriler"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton3ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#xc7;al&#x131;&#x15f;anlar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton4ActionPerformed"/>
-      </Events>
-    </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -219,57 +185,64 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lbl_id">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_sasi_no">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x15e;asi Numaras&#x131;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Model"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="lbl_marka">
       <Properties>
         <Property name="text" type="java.lang.String" value="Marka"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lbl_model">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Model"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_yil">
       <Properties>
         <Property name="text" type="java.lang.String" value="Y&#x131;l"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Yak&#x131;t Tipi"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="lbl_km">
       <Properties>
         <Property name="text" type="java.lang.String" value="Kilometre"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="lbl_yakit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Yak&#x131;t Tipi"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_vites">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vites T&#x130;pi"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="lbl_hasar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hasar Kayd&#x131;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="tf_id">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="tf_sasi_no">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="tf_marka">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="tf_model">
     </Component>
-    <Component class="javax.swing.JSpinner" name="jSpinner2">
+    <Component class="javax.swing.JSpinner" name="spn_yil">
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JSpinner" name="spn_km">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmb_yakit">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -284,7 +257,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="cmb_vites">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
@@ -297,37 +270,62 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JTextField" name="tf_hasar">
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_ekle">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ekle"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ekleActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ID"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
-    </Component>
-    <Component class="javax.swing.JSpinner" name="jSpinner1">
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btn_sil">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sil"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_silActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btn_duzenle">
       <Properties>
         <Property name="text" type="java.lang.String" value="D&#xfc;zenle"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_duzenleActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_arabalar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Arabalar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_arabalarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_satislar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sat&#x131;&#x15f;lar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_satislarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_musteriler">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teriler"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_musterilerActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_calisanlar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc7;al&#x131;&#x15f;anlar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_calisanlarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
